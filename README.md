@@ -51,15 +51,16 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 #### MVP 
 
 - Find and use external api 
-- Render data on page 
 - Allow user to view statistics of a monster
 - Break the search down from 1086 options using multiple selectors
+- Render data on page 
 
 #### PostMVP  
 
 - Add second screen
 - Add second toolbar
-- Allow for comparison vs party composition
+- Allow for comparison vs party composition\
+- Render data on page 
 
 ## Project Schedule 
 
@@ -67,13 +68,15 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|July 10-12| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|July 13| Project Approval | Incomplete
-|July 13| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|July 14| Pseudocode / actual code | Incomplete
-|July 15| Initial Clickable Model  | Incomplete
-|July 16| MVP | Incomplete
-|July 17| Presentations | Incomplete
+|Nov 5-7| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
+|Nov 8| Project Approval/HTML | Incomplete
+|Nov 9|Core JS Structure | Incomplete
+|Nov 10| Flexbox | Incomplete
+|Nov 11| Psuedocode/Code JS  | Incomplete
+|Nov 12| MVP | Incomplete
+|Nov 13| HTML/CSS for Second Page | Incomplete
+|Nov 14| JS for Second Page | Incomplete
+|Nov 15| Presentations | Incomplete
 
 ## Priority Matrix
 
@@ -81,15 +84,7 @@ Include a full list of features that have been prioritized based on the `Time an
 
 ## Timeframes
 
-Tell us how long you anticipate spending on each area of development. Be sure to consider how many hours a day you plan to be coding and how many days you have available until presentation day.
 
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Throughout your project, keep track of your Time Invested and Actual Time and update your README regularly.
-
-| Component | Priority | Estimated Time | Time Invested | Actual Time |
-| --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
 ![image](https://user-images.githubusercontent.com/9029262/140624468-1470415f-b0c9-4eaa-a692-c4f44d5d974b.png)
 ![image](https://user-images.githubusercontent.com/9029262/140624477-e545251d-ee53-4e0d-ae2e-f1a9f39c7d0f.png)
 ![image](https://user-images.githubusercontent.com/9029262/140624484-c38d9674-31c5-426b-a3ca-ba7cce987f52.png)
@@ -100,11 +95,6 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
 
-```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
-```
 
 ## Change Log
  Use this section to document what changes were made and the reasoning behind those changes.  
