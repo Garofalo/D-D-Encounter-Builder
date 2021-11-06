@@ -14,26 +14,26 @@ The full application will allow people running games of D&D to take those monste
 ## API and Data Sample
 https://api.open5e.com/?format=json This is the api that I used.
 JSON snippet:
-{
-    "count": 1086,
-    "next": "https://api.open5e.com/monsters/?format=api&page=2",
-    "previous": null,
-    "results": [
-        {
-            "slug": "aatxe",
-            "name": "Aatxe",
-            "size": "Large",
-            "type": "celestial",
-            "subtype": "shapechanger",
-            "group": null,
-            "alignment": "lawful good",
-            "armor_class": 14,
-            "armor_desc": "natural armor",
-            "hit_points": 105,
-            "hit_dice": "10d10+50",
-            "speed": {
-                "walk": 50
-            },
+	{
+   	 "count": 1086,
+   	 "next": "https://api.open5e.com/monsters/?format=api&page=2",
+   	 "previous": null,
+    	"results": [
+     	   {
+       	    	"slug": "aatxe",
+      	    	"name": "Aatxe",
+            	"size": "Large",
+            	"type": "celestial",
+            	"subtype": "shapechanger",
+            	"group": null,
+            	"alignment": "lawful good",
+            	"armor_class": 14,
+            	"armor_desc": "natural armor",
+            	"hit_points": 105,
+            	"hit_dice": "10d10+50",
+            	"speed": {
+                	"walk": 50
+            	},
 
 ## Wireframes
 
