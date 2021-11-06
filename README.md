@@ -39,6 +39,9 @@ JSON snippet:
 
 Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
 ![image](https://user-images.githubusercontent.com/9029262/140623362-a8dfb6a6-3208-441b-b2e8-46f8f9df14c2.png)
+![image](https://user-images.githubusercontent.com/9029262/140623424-d88a44ed-f09d-43d3-9f7c-e1ad47620662.png)
+![image](https://user-images.githubusercontent.com/9029262/140623442-7b97cfe1-5425-4818-8010-1551fb4529df.png)
+
 
 
 ### MVP/PostMVP
@@ -46,21 +49,19 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
 - Find and use external api 
 - Render data on page 
-- Allow user to choose favorites 
+- Allow user to view statistics of a monster
+- Break the search down from 1086 options using multiple selectors
 
 #### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
 
-- Add second API
-- Use local storage to save user favorites
+- Add second screen
+- Add second toolbar
+- Allow for comparison vs party composition
 
-## Project Schedule
-
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
+## Project Schedule 
 
 You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
@@ -89,6 +90,11 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
 | Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
 | Total | H | 6hrs| 5hrs | 5hrs |
+![image](https://user-images.githubusercontent.com/9029262/140624468-1470415f-b0c9-4eaa-a692-c4f44d5d974b.png)
+![image](https://user-images.githubusercontent.com/9029262/140624477-e545251d-ee53-4e0d-ae2e-f1a9f39c7d0f.png)
+![image](https://user-images.githubusercontent.com/9029262/140624484-c38d9674-31c5-426b-a3ca-ba7cce987f52.png)
+
+
 
 ## Code Snippet
 
