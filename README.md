@@ -1,10 +1,5 @@
 # D&D-Encounter-Builder
 
-# Project Overview
-
-## Project Name
-
-D&D Encounter Builder
 
 ## Project Description
 
