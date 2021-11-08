@@ -39,11 +39,11 @@ JSON snippet:
 
 **Minimum Viable Product**<br>
 Landing
-![image](https://user-images.githubusercontent.com/9029262/140623362-a8dfb6a6-3208-441b-b2e8-46f8f9df14c2.png)
+![image](https://user-images.githubusercontent.com/9029262/140623362-a8dfb6a6-3208-441b-b2e8-46f8f9df14c2.png)<br>
 After Search
 ![image](https://user-images.githubusercontent.com/9029262/140623424-d88a44ed-f09d-43d3-9f7c-e1ad47620662.png)
 
-**Post MVP
+**Post MVP**
 ![image](https://user-images.githubusercontent.com/9029262/140623442-7b97cfe1-5425-4818-8010-1551fb4529df.png)
 
 
@@ -67,8 +67,6 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 - Render data on page 
 
 ## Project Schedule 
-
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
 |  Day | Deliverable | Status
 |---|---| ---|
