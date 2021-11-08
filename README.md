@@ -9,7 +9,7 @@ The full application will allow people running games of D&D to take those monste
 ## API and Data Sample
 https://api.open5e.com/?format=json This is the api that I used.
 JSON snippet:
-	{
+	```{
    	 "count": 1086,
    	 "next": "https://api.open5e.com/monsters/?format=api&page=2",
    	 "previous": null,
@@ -28,7 +28,7 @@ JSON snippet:
             	"hit_dice": "10d10+50",
             	"speed": {
                 	"walk": 50
-            	},
+            	},```
 
 ## Wireframes
 
