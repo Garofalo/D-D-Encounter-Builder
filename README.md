@@ -1,4 +1,4 @@
-# D-D-Encounter-Builder
+# D&D-Encounter-Builder
 
 # Project Overview
 
@@ -82,7 +82,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
+![image](https://user-images.githubusercontent.com/9029262/140754199-4cbcf5e1-6c1d-4d23-bfac-a4a513e0f3da.png)<br>
 
 ## Timeframes
 
