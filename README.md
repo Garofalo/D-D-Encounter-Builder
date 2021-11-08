@@ -37,10 +37,13 @@ JSON snippet:
 
 ## Wireframes
 
-Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
+**Minimum Viable Product**
+Landing
 ![image](https://user-images.githubusercontent.com/9029262/140623362-a8dfb6a6-3208-441b-b2e8-46f8f9df14c2.png)
-Minimum Viable Product
+After Search
 ![image](https://user-images.githubusercontent.com/9029262/140623424-d88a44ed-f09d-43d3-9f7c-e1ad47620662.png)
+
+**Post MVP
 ![image](https://user-images.githubusercontent.com/9029262/140623442-7b97cfe1-5425-4818-8010-1551fb4529df.png)
 
 
@@ -85,10 +88,13 @@ Include a full list of features that have been prioritized based on the `Time an
 
 ## Timeframes
 
+**MVP Timeframe
+![image](https://user-images.githubusercontent.com/9029262/140750652-e154f14b-86dc-4694-9ba7-f4155a8a3710.png)
+![image](https://user-images.githubusercontent.com/9029262/140750710-ee056d2c-ead3-42ca-94a6-607cd0465661.png)
 
-![image](https://user-images.githubusercontent.com/9029262/140624468-1470415f-b0c9-4eaa-a692-c4f44d5d974b.png)
-![image](https://user-images.githubusercontent.com/9029262/140624477-e545251d-ee53-4e0d-ae2e-f1a9f39c7d0f.png)
-![image](https://user-images.githubusercontent.com/9029262/140624484-c38d9674-31c5-426b-a3ca-ba7cce987f52.png)
+**Total Timeframe
+![image](https://user-images.githubusercontent.com/9029262/140750815-495a2e34-dc84-4fe0-8312-be5ce3eb41ec.png)
+![image](https://user-images.githubusercontent.com/9029262/140750866-523d43dd-0d80-4cfe-9dbc-1efe96363730.png)
 
 
 
