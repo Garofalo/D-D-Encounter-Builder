@@ -58,7 +58,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 - Add second screen
 - Add second toolbar
-- Allow for comparison vs party composition\
+- Allow for comparison vs party composition
 - Render data on page 
 
 ## Project Schedule 
