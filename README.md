@@ -8,8 +8,8 @@ The full application will allow people running games of D&D to take those monste
 
 ## API and Data Sample
 https://api.open5e.com/?format=json This is the api that I used.
-JSON snippet:
-	```{
+JSON snippet:<br>
+```{
    	 "count": 1086,
    	 "next": "https://api.open5e.com/monsters/?format=api&page=2",
    	 "previous": null,
