@@ -86,11 +86,11 @@ Include a full list of features that have been prioritized based on the `Time an
 
 ## Timeframes
 
-**MVP Timeframe
+**MVP Timeframe**<br>
 ![image](https://user-images.githubusercontent.com/9029262/140750652-e154f14b-86dc-4694-9ba7-f4155a8a3710.png)
 ![image](https://user-images.githubusercontent.com/9029262/140750710-ee056d2c-ead3-42ca-94a6-607cd0465661.png)
 
-**Total Timeframe
+**Total Timeframe**<br>
 ![image](https://user-images.githubusercontent.com/9029262/140750815-495a2e34-dc84-4fe0-8312-be5ce3eb41ec.png)
 ![image](https://user-images.githubusercontent.com/9029262/140750866-523d43dd-0d80-4cfe-9dbc-1efe96363730.png)
 
