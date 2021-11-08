@@ -39,6 +39,7 @@ JSON snippet:
 
 Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
 ![image](https://user-images.githubusercontent.com/9029262/140623362-a8dfb6a6-3208-441b-b2e8-46f8f9df14c2.png)
+Minimum Viable Product
 ![image](https://user-images.githubusercontent.com/9029262/140623424-d88a44ed-f09d-43d3-9f7c-e1ad47620662.png)
 ![image](https://user-images.githubusercontent.com/9029262/140623442-7b97cfe1-5425-4818-8010-1551fb4529df.png)
 
