@@ -35,7 +35,7 @@ fetchData();
 
 function getTypeList(typeList) {
 
-  let distictTypes = [...new Set(typeList)]
+  let distictTypes = [...new Set(typeList)].sort();
 
   distictTypes.forEach((type) => {
     let typeOption = document.createElement('option')

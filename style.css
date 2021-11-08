@@ -1,7 +1,7 @@
 .hidden{
   display: none;
 }
-/* setting up colors & padding */
+
 
 header {
   background-color: rgb(114, 116, 248);
@@ -34,13 +34,16 @@ footer {
   padding: 50px;
   box-sizing: border-box;
   max-height: 10vh;
+  display: flex;
 }
 img{
   max-height: 7vh;
   border-radius: 5%;
+  /* align-items: center;
+  justify-content: space-around; */
 }
 
-/* HERE COMES SOME FLEXBOX */
+
 body{
   display:flex;
   flex-direction: column;
@@ -76,7 +79,7 @@ main{
   }
 
   #monster-sidebar{
-    /* 12em is the width of the columns */
+    
     order: 1;
     align-self: flex-start;
     width: 100vw;
@@ -85,9 +88,7 @@ main{
     flex-wrap: wrap;
     
   }
-  .right{
-    order:2;
-  }
+  
   #monster-body{
     order: 3;
     flex: 3;
