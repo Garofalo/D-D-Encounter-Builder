@@ -37,7 +37,7 @@ JSON snippet:
 
 ## Wireframes
 
-**Minimum Viable Product**
+**Minimum Viable Product**<br>
 Landing
 ![image](https://user-images.githubusercontent.com/9029262/140623362-a8dfb6a6-3208-441b-b2e8-46f8f9df14c2.png)
 After Search
