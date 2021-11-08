@@ -28,7 +28,7 @@ JSON snippet:<br>
             	"hit_dice": "10d10+50",
             	"speed": {
                 	"walk": 50
-}```
+   }```
 
 ## Wireframes
 
