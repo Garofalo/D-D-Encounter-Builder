@@ -1,0 +1,108 @@
+.hidden{
+  display: none;
+}
+/* setting up colors & padding */
+
+header {
+  background-color: rgb(114, 116, 248);
+  padding: 50px;
+  box-sizing: border-box;
+  max-height: 10vh;
+}
+
+#monster-body {
+  background-color:antiquewhite;
+  padding: 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#monster-sidebar{
+  width: 33%;
+}
+
+div {
+  background-color: coral;
+  padding: 5%;
+  box-sizing: border-box;
+}
+
+footer {
+  background-color:rgb(109, 108, 108);
+  padding: 50px;
+  box-sizing: border-box;
+  max-height: 10vh;
+}
+img{
+  max-height: 7vh;
+  border-radius: 5%;
+}
+
+/* HERE COMES SOME FLEXBOX */
+body{
+  display:flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header, footer{
+  flex: 0 150px;
+}
+main{
+  flex:1;
+  display: flex;
+}
+#monster-body{
+  order:2;
+  flex:1;
+}
+#monster-sidebar{
+  order:1;
+  display:flex;
+  flex-direction: column;
+}
+
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    flex: 1;
+  }
+
+  main{
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  #monster-sidebar{
+    /* 12em is the width of the columns */
+    order: 1;
+    align-self: flex-start;
+    width: 100vw;
+    display: flex;
+    flex-direction: rows;
+    flex-wrap: wrap;
+    
+  }
+  .right{
+    order:2;
+  }
+  #monster-body{
+    order: 3;
+    flex: 3;
+    align-self: flex-end;
+    width: 100vw;
+    max-height: 60vh;
+  }
+  header{
+    max-height: 10vh;
+  }
+  footer{
+    max-height: 10vh;
+  }
+  div{
+    padding:0px;
+    max-height:12vh;
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src='./script.js' defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel='stylesheet' type='text/css' href='./reset.css'>
+  <link rel='stylesheet' type='text/css' href='./style.css'>
+</head>
+
+<body>
+  <header>D&D 5e SRD Monster Reference</header>
+  <main>
+    <div class='monster-sidebar'>
+      <form class='monster'>
+        <label for='monster-type'>Monster Type</label><br>
+        <select id='monster-type'>
+          <option selected disabled hidden>Start Here</option>
+        </select>
+      </form>
+      <form class="monster">
+        <label for='monster-cr'>Challenge Rating</label><br>
+        <select id='monster-cr'>
+          <option selected disabled hidden>Select a CR</option>
+        </select>
+      </form>
+      <form class="monster">
+        <label for='monster-name'>Monster Name</label><br>
+        <select id='monster-name'>
+          <option selected disabled hidden>Select a Monster</option>
+        </select>
+      </form>
+      <br>
+      <button id='get-stats'>Get Stats!</button>
+    </div>
+    <div id='monster-body'>
+      <h2>Start By Choosing a Type</h2>
+      <h2>Then, Select a Challenge Rating</h2>
+      <h2>Finally, Select your Monster and "Get Stats!"</h2>
+    </div>
+  </main>
+  <footer>
+    <img src='github.png' alt='Link to Github'>
+    <img src='linkedin_vnvo6s.png' alt='Link to LinkdIn'>
+  </footer>
+</body>
+
+</html>
