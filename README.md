@@ -92,7 +92,7 @@ Include a full list of features that have been prioritized based on the `Time an
 
 **Total Timeframe**<br>
 ![image](https://user-images.githubusercontent.com/9029262/140750815-495a2e34-dc84-4fe0-8312-be5ce3eb41ec.png)
-![image](https://user-images.githubusercontent.com/9029262/140750866-523d43dd-0d80-4cfe-9dbc-1efe96363730.png)
+![image](https://user-images.githubusercontent.com/9029262/140751364-1d9f7744-0f6b-46af-8317-e051239e2349.png)
 
 
 
