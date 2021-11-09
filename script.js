@@ -3,6 +3,7 @@ let ratingSelector = document.querySelector('#monster-cr')
 let nameSelector = document.querySelector('#monster-name')
 let getStats = document.querySelector('#get-stats')
 let monsterBody = document.querySelector('#monster-body')
+let monsterStats = document.querySelector('#monster-stats')
 //Access the API
 async function fetchData() {
   let i = 1;
@@ -32,9 +33,13 @@ async function fetchData() {
 
 fetchData();
 // Get unique types from fetchdata and use it to add the types to the selector
-
+toLower = function (x) {
+  return x.toLowerCase();
+};
 function getTypeList(typeList) {
 
+  // let distictTypes = [...new Set(typeList)].map(toLower).sort();
+  // let capitalTypes = [...new Set(distictTypes)]
   let distictTypes = [...new Set(typeList)].sort();
 
   distictTypes.forEach((type) => {
@@ -142,6 +147,7 @@ async function getMonsterStats() {
 
 function removeBoilerPlate() {
   monsterBody.innerHTML = ''
+  monsterStats.innerHTML = ''
 }
 
 function addStatsToPage(monster) {
@@ -150,19 +156,57 @@ function addStatsToPage(monster) {
   let acStat = document.createElement('p')
   let hpStat = document.createElement('p')
   let crStat = document.createElement('p')
+  let statSTR = document.createElement('p')
+  let statDEX = document.createElement('p')
+  let statCHA = document.createElement('p')
+  let statINT = document.createElement('p')
+  let statCON = document.createElement('p')
+  let statWIS = document.createElement('p')
+  let statP = document.createElement('p')
 
-  const { name, type, armor_class, hit_points, challenge_rating } = monster
-  nameStat.innerText = name
-  typeStat.innerText = type
+  const { name, type, armor_class, hit_points, challenge_rating, strength, dexterity, charisma, intelligence, constitution, wisdom } = monster
+  nameStat.innerText = name.toUpperCase()
+  typeStat.innerText = type.toUpperCase()
   acStat.innerText = `Armor Class : ${armor_class}`
   hpStat.innerText = `Hit Points : ${hit_points}`
   crStat.innerText = `Challenge Rating : ${challenge_rating}`
+  statDEX.innerText = `DEX: ${dexterity}`
+  statSTR.innerText = `STR: ${strength}`
+  statCON.innerText = `CON: ${constitution}`
+  statWIS.innerText = `WIS: ${wisdom}`
+  statINT.innerText = `INT: ${intelligence}`
+  statCHA.innerText = `CHA: ${charisma}`
+  statP.innerText = 'Stats'
+  statP.classList.add('underline')
+
+  monsterStats.appendChild(statP)
+  monsterStats.appendChild(statSTR)
+  monsterStats.appendChild(statDEX)
+  monsterStats.appendChild(statCON)
+  monsterStats.appendChild(statWIS)
+  monsterStats.appendChild(statINT)
+  monsterStats.appendChild(statCHA)
 
   monsterBody.appendChild(nameStat)
   monsterBody.appendChild(typeStat)
   monsterBody.appendChild(acStat)
   monsterBody.appendChild(hpStat)
   monsterBody.appendChild(crStat)
+  defaultOption()
 
+}
 
+function defaultOption() {
+  typeSelector.selectedIndex = 0;
+  nameSelector.selectedIndex = 0
+  ratingSelector.selectedIndex = 0;
+
+  resetChoices(nameSelector)
+  resetChoices(ratingSelector)
+}
+
+function resetChoices(div) {
+  while (div.childNodes.length > 2) {
+    div.removeChild(div.lastChild);
+  }
 }
