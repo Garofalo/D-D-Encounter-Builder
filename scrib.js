@@ -1,7 +1,26 @@
 let partySizeDiv = document.querySelector('#party-size-buttons')
 let bubbleDiv = document.querySelector('#bubbles')
-let selectedLevel = document.querySelector('.selected-level')
-let selectedPartySize = document.querySelector('.party-size')
+let selected = document.getElementsByClassName("selected")
+let test = document.createElement('button')
+
+
+test.innerText = 'test'
+test.addEventListener('click', testFunction)
+partySizeDiv.appendChild(test)
+
+function testFunction() {
+  let easy = selected[0].innerText * xpArray[`${selected[1].innerText}`][0]
+  let medium = selected[0].innerText * xpArray[`${selected[1].innerText}`][1]
+  let hard = selected[0].innerText * xpArray[`${selected[1].innerText}`][2]
+  let deadly = selected[0].innerText * xpArray[`${selected[1].innerText}`][3]
+  console.log(easy)
+  console.log(medium)
+  console.log(hard)
+  console.log(deadly)
+}
+
+
+
 
 for (let i = 1; i < 7; i++) {
   let partyNumButtons = document.createElement('button')
@@ -162,16 +181,11 @@ function removeSelected(arr) {
 
 
 let getSiblings = function (e) {
-  // for collecting siblings
   let siblings = [];
-  // if no parent, return no sibling
   if (!e.parentNode) {
     return siblings;
   }
-  // first child of the parent node
   let sibling = e.parentNode.firstChild;
-
-  // collecting siblings
   while (sibling) {
     if (sibling.nodeType === 1 && sibling !== e) {
       siblings.push(sibling);
