@@ -28,6 +28,7 @@ async function fetchData() {
     monsterTypes.push(monster.type)
 
   })
+  console.log(monsterTypes)
   getTypeList(monsterTypes)
 }
 
@@ -41,7 +42,7 @@ function getTypeList(typeList) {
   // let distictTypes = [...new Set(typeList)].map(toLower).sort();
   // let capitalTypes = [...new Set(distictTypes)]
   let distictTypes = [...new Set(typeList)].sort();
-
+  console.log(distictTypes)
   distictTypes.forEach((type) => {
     let typeOption = document.createElement('option')
 
@@ -75,13 +76,14 @@ async function getCR(event) {
   monsters.forEach(monster => {
     monsterCR.push(monster.challenge_rating)
   })
+  console.log(monsterCR)
   populateCrSelector(monsterCR)
 }
 
 function populateCrSelector(crList) {
 
   let distictCR = [...new Set(crList)].sort(function (a, b) { return a - b })
-
+  console.log(distictCR)
   distictCR.forEach((cr) => {
     let crOption = document.createElement('option')
 
@@ -101,7 +103,6 @@ async function getMonsterName(event) {
   let monsterName = []
   while (i) {
     const url = `https://api.open5e.com/monsters/?format=json&page=${i}&type=${type}&challenge_rating=${cr}`;
-    // const url = `https://api.open5e.com/monsters/?format=json&page=1`;
     try {
       const res = await axios.get(url)
       monsters = [...monsters, ...res.data.results];
@@ -117,12 +118,14 @@ async function getMonsterName(event) {
   monsters.forEach(monster => {
     monsterName.push(monster.name)
   })
+  console.log(monsterName)
   populateNameSelector(monsterName)
 }
 
 function populateNameSelector(nameList) {
 
   let distictName = [...new Set(nameList)].sort()
+  console.log(distictName)
   distictName.forEach((name) => {
     let nameOption = document.createElement('option')
 

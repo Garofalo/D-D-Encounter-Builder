@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src='./scrib.js' defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' type='text/css' href='./reset.css'>
+  <link rel='stylesheet' type='text/css' href='./styl2.css'>
+  <title>Encounter Builder</title>
+</head>
+
+<body>
+  <header></header>
+  <div class='main'>
+    <div id='left'>
+      <p>Party Size</p>
+      <div id='bubbles'>
+      </div>
+      <div id='party-size'>
+        <p>Party Level</p>
+      </div>
+      <div id='party-size-buttons'>
+      </div>
+    </div>
+    <div id='center'>
+      <div id='center-top'>
+        <div id='party-comp'>
+          <p>Table for How Many?</p>
+          <p>And What Level are you?</p>
+        </div>
+        <div id='vs'>VS</div>
+        <div id='monster-comp'>
+          <p>First, Select Your Type of Monster</p>
+          <p>Then, Select a Challenge Rating</p>
+          <p>Then, Select Your Monster and "Add To Fight!</p>
+        </div>
+      </div>
+      <div id='center-middle'>
+        <button id='results-button'>Fight!</button>
+      </div>
+      <div id='center-bottom'></div>
+    </div>
+    <div id='right'>
+
+      <form class='monster'>
+        <p>Monster Type</p></br>
+        <select id='monster-type'>
+          <option selected disabled hidden>Start Here</option>
+        </select>
+      </form>
+      <form class="monster">
+        <p>Challenge Rating</p></br>
+        <select id='monster-cr'>
+          <option selected disabled hidden>Select a CR</option>
+        </select>
+      </form>
+      <form class="monster">
+        <p>Monster Name</p></br>
+        <select id='monster-name'>
+          <option selected disabled hidden>Select a Monster</option>
+        </select>
+      </form>
+      <br>
+      <button id='get-stats'>Add To Fight!</button>
+    </div>
+
+  </div>
+
+  <footer></footer>
+</body>
+
+</html>
