@@ -16,7 +16,14 @@ header {
 #center-left, #center-right{
   width: 33%;
 }
-.button{
+.party-size-button{
+  border-radius: 50%;
+  width: 15%;
+  text-align: center;
+  font-size: 1vw;
+  
+}
+.party-level-button{
   border-radius: 50%;
   width: 15%;
   text-align: center;

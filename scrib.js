@@ -6,16 +6,23 @@ let selectedPartySize = document.querySelector('.party-size')
 for (let i = 1; i < 7; i++) {
   let partyNumButtons = document.createElement('button')
   partyNumButtons.innerText = `${i}`
-  partyNumButtons.classList.add('button')
+  partyNumButtons.classList.add('party-size-button')
   bubbleDiv.appendChild(partyNumButtons)
+  partyNumButtons.addEventListener('click', makeSelected)
 }
+
+
+
 
 for (let i = 1; i < 21; i++) {
   let levelNumButtons = document.createElement('button')
   levelNumButtons.innerText = `${i}`
-  levelNumButtons.classList.add('button')
+  levelNumButtons.classList.add('party-level-button')
   partySizeDiv.appendChild(levelNumButtons)
+  levelNumButtons.addEventListener('click', makeSelected)
 }
+
+
 
 let lvl1XP = [
   25,
@@ -141,5 +148,35 @@ let lvl20XP = [
 
 let xpArray = [lvl1XP, lvl2XP, lvl3XP, lvl4XP, lvl5XP, lvl6XP, lvl7XP, lvl8XP, lvl9XP, lvl10XP, lvl11XP, lvl12XP, lvl13XP, lvl14XP, lvl15XP, lvl16XP, lvl17XP, lvl18XP, lvl19XP, lvl20XP]
 
+function makeSelected(event) {
+  event.target.classList.toggle('selected')
+  let forRemoval = getSiblings(event.target)
+  removeSelected(forRemoval)
+}
+function removeSelected(arr) {
+  arr.forEach((button) => {
+    button.classList.remove('selected')
+  })
+}
 
-function
+
+
+let getSiblings = function (e) {
+  // for collecting siblings
+  let siblings = [];
+  // if no parent, return no sibling
+  if (!e.parentNode) {
+    return siblings;
+  }
+  // first child of the parent node
+  let sibling = e.parentNode.firstChild;
+
+  // collecting siblings
+  while (sibling) {
+    if (sibling.nodeType === 1 && sibling !== e) {
+      siblings.push(sibling);
+    }
+    sibling = sibling.nextSibling;
+  }
+  return (siblings);
+};
