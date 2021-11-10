@@ -1,12 +1,11 @@
 let partySizeDiv = document.querySelector('#party-size-buttons')
 let bubbleDiv = document.querySelector('#bubbles')
 let selected = document.getElementsByClassName("selected")
-let test = document.createElement('button')
+let resultsButton = document.querySelector('#results-button')
 
 
-test.innerText = 'test'
-test.addEventListener('click', testFunction)
-partySizeDiv.appendChild(test)
+resultsButton.addEventListener('click', testFunction)
+
 
 function testFunction() {
   let easy = selected[0].innerText * xpArray[`${selected[1].innerText}`][0]
@@ -14,9 +13,22 @@ function testFunction() {
   let hard = selected[0].innerText * xpArray[`${selected[1].innerText}`][2]
   let deadly = selected[0].innerText * xpArray[`${selected[1].innerText}`][3]
   console.log(easy)
-  console.log(medium)
-  console.log(hard)
-  console.log(deadly)
+  console.log(easy * multiplier)
+
+}
+let monsterNumber
+if (monsterNumber === 1) {
+  multiplier = 1
+} else if (monsterNumber === 2) {
+  multiplier = 1.5
+} else if (monsterNumber > 2 && monsterNumber < 7) {
+  multiplier = 2
+} else if (monsterNumber > 6 && monsterNumber < 11) {
+  multiplier = 2.5
+} else if (monsterNumber > 10 && monsterNumber < 14) {
+  multiplier = 3
+} else {
+  multiplier = 4
 }
 
 
@@ -194,3 +206,191 @@ let getSiblings = function (e) {
   }
   return (siblings);
 };
+
+
+//MONSTER PART
+let typeSelector = document.querySelector('#monster-type')
+let ratingSelector = document.querySelector('#monster-cr')
+let nameSelector = document.querySelector('#monster-name')
+let addToFight = document.querySelector('#add-to-fight')
+let monsterComp = document.querySelector('#monster-comp')
+
+addToFight.addEventListener('click', getMonsterStats)
+
+async function fetchData() {
+  let i = 1;
+  let monsters = [];
+  let monsterTypes = []
+  while (i) {
+    const url = `https://api.open5e.com/monsters/?format=json&page=${i}`;
+
+    try {
+      const res = await axios.get(url)
+      monsters = [...monsters, ...res.data.results];
+      if (!res.data.next) {
+        break;
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
+    i++;
+  }
+  monsters.forEach(monster => {
+    monsterTypes.push(monster.type)
+
+  })
+  console.log(monsterTypes)
+  getTypeList(monsterTypes)
+}
+
+fetchData();
+
+function getTypeList(typeList) {
+
+  let distictTypes = [...new Set(typeList)].sort();
+  console.log(distictTypes)
+  distictTypes.forEach((type) => {
+    let typeOption = document.createElement('option')
+
+    typeOption.value = type
+    typeOption.textContent = type
+    typeSelector.appendChild(typeOption)
+  })
+}
+typeSelector.addEventListener('change', getCR)
+async function getCR(event) {
+  let type = event.target.value
+  let i = 1
+  let monsters = [];
+  let monsterCR = []
+  while (i) {
+    const url = `https://api.open5e.com/monsters/?format=json&page=${i}&type=${type}`;
+    try {
+      const res = await axios.get(url)
+      monsters = [...monsters, ...res.data.results];
+      if (!res.data.next) {
+        break;
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
+    i++;
+  }
+  monsters.forEach(monster => {
+    monsterCR.push(monster.challenge_rating)
+  })
+  console.log(monsterCR)
+  populateCrSelector(monsterCR)
+}
+
+function populateCrSelector(crList) {
+
+  let distictCR = [...new Set(crList)].sort(function (a, b) { return a - b })
+  console.log(distictCR)
+  distictCR.forEach((cr) => {
+    let crOption = document.createElement('option')
+
+    crOption.value = cr
+    crOption.textContent = cr
+    ratingSelector.appendChild(crOption)
+  })
+}
+
+ratingSelector.addEventListener('change', getMonsterName)
+
+async function getMonsterName(event) {
+  let type = typeSelector.value
+  let cr = event.target.value
+  let i = 1
+  let monsters = [];
+  let monsterName = []
+  while (i) {
+    const url = `https://api.open5e.com/monsters/?format=json&page=${i}&type=${type}&challenge_rating=${cr}`;
+    try {
+      const res = await axios.get(url)
+      monsters = [...monsters, ...res.data.results];
+      if (!res.data.next) {
+        break;
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
+    i++;
+  }
+  monsters.forEach(monster => {
+    monsterName.push(monster.name)
+  })
+  console.log(monsterName)
+  populateNameSelector(monsterName)
+}
+
+function populateNameSelector(nameList) {
+
+  let distictName = [...new Set(nameList)].sort()
+  console.log(distictName)
+  distictName.forEach((name) => {
+    let nameOption = document.createElement('option')
+    nameOption.value = name
+    nameOption.textContent = name
+    nameSelector.appendChild(nameOption)
+  })
+}
+
+
+async function getMonsterStats() {
+  let url = `https://api.open5e.com/monsters/?search=${nameSelector.value}&challenge_rating=${ratingSelector.value}&type=${typeSelector.value}`
+  try {
+    const res = await axios.get(url)
+    let monster = res.data.results[0]
+
+    addMonsterToPage(monster)
+  } catch (error) {
+    console.log(error);
+  }
+}
+function defaultOption() {
+  typeSelector.selectedIndex = 0;
+  nameSelector.selectedIndex = 0
+  ratingSelector.selectedIndex = 0;
+  resetChoices(nameSelector)
+  resetChoices(ratingSelector)
+}
+
+function resetChoices(div) {
+  while (div.childNodes.length > 2) {
+    div.removeChild(div.lastChild);
+  }
+}
+
+
+//Change this
+
+function addMonsterToPage(monster) {
+  let nameStat = document.createElement('p')
+  let typeStat = document.createElement('p')
+  let acStat = document.createElement('p')
+  let hpStat = document.createElement('p')
+  let crStat = document.createElement('p')
+
+
+  const { name, type, armor_class, hit_points, challenge_rating } = monster
+  nameStat.innerText = name.toUpperCase()
+  typeStat.innerText = type.toUpperCase()
+  acStat.innerText = `Armor Class : ${armor_class}`
+  hpStat.innerText = `Hit Points : ${hit_points}`
+  crStat.innerText = `Challenge Rating : ${challenge_rating}`
+
+
+
+  monsterComp.appendChild(nameStat)
+  monsterComp.appendChild(typeStat)
+  monsterComp.appendChild(acStat)
+  monsterComp.appendChild(hpStat)
+  monsterComp.appendChild(crStat)
+  defaultOption()
+
+}
+

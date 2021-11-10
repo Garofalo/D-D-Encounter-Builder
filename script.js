@@ -4,14 +4,14 @@ let nameSelector = document.querySelector('#monster-name')
 let getStats = document.querySelector('#get-stats')
 let monsterBody = document.querySelector('#monster-body')
 let monsterStats = document.querySelector('#monster-stats')
-//Access the API
+
 async function fetchData() {
   let i = 1;
   let monsters = [];
   let monsterTypes = []
   while (i) {
     const url = `https://api.open5e.com/monsters/?format=json&page=${i}`;
-    // const url = `https://api.open5e.com/monsters/?format=json&page=1`;
+
     try {
       const res = await axios.get(url)
       monsters = [...monsters, ...res.data.results];
@@ -34,9 +34,7 @@ async function fetchData() {
 
 fetchData();
 // Get unique types from fetchdata and use it to add the types to the selector
-toLower = function (x) {
-  return x.toLowerCase();
-};
+
 function getTypeList(typeList) {
 
   // let distictTypes = [...new Set(typeList)].map(toLower).sort();
