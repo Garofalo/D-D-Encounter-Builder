@@ -2,7 +2,7 @@ let partySizeDiv = document.querySelector('#party-size-buttons')
 let bubbleDiv = document.querySelector('#bubbles')
 let selected = document.getElementsByClassName("selected")
 let resultsButton = document.querySelector('#results-button')
-
+let starterP = document.querySelectorAll('.start')
 
 resultsButton.addEventListener('click', testFunction)
 
@@ -382,7 +382,9 @@ function addMonsterToPage(monster) {
   acStat.innerText = `Armor Class : ${armor_class}`
   hpStat.innerText = `Hit Points : ${hit_points}`
   crStat.innerText = `Challenge Rating : ${challenge_rating}`
-
+  starterP.forEach(p => {
+    p.classList.add('hidden')
+  })
 
 
   monsterComp.appendChild(nameStat)
