@@ -50,42 +50,6 @@ for (let i = 1; i < 21; i++) {
 
 
 resultsButton.addEventListener('click', testFunction)
-//convert totalCR to xp
-//compare totalCRxp to easy, medium, hard, deadly
-//append that plus text to results
-
-// function testFunction() {
-//   let monsterNumber = allMonsterCr.length
-//   let easy = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][0]
-//   let medium = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][1]
-//   let hard = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][2]
-//   let deadly = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][3]
-//   let multiplier
-//   let totalCR = 0
-//   for (let i = 0; i < allMonsterCr.length; i++) {
-//     let parsed = eval(allMonsterCr[i].innerText)
-//     totalCR += parsed
-//   }
-//   if (monsterNumber === 1) {
-//     multiplier = 1
-//   } else if (monsterNumber === 2) {
-//     multiplier = 1.5
-//   } else if (monsterNumber > 2 && monsterNumber < 7) {
-//     multiplier = 2
-//   } else if (monsterNumber > 6 && monsterNumber < 11) {
-//     multiplier = 2.5
-//   } else if (monsterNumber > 10 && monsterNumber < 14) {
-//     multiplier = 3
-//   } else {
-//     multiplier = 4
-//   }
-//   console.log(multiplier)
-
-//   console.log(monsterNumber)
-//   findTotalMonsterXP()
-//   resultsArea.classList.remove('hidden')
-// }
-
 
 //LEFT FUNCTIONS
 function makeSelectedPartySize(event) {
@@ -239,7 +203,6 @@ async function getMonsterName(event) {
       if (!res.data.next) {
         break;
       }
-
     } catch (error) {
       console.log(error);
     }
@@ -276,19 +239,7 @@ async function getMonsterStats() {
     console.log(error);
   }
 }
-// function defaultOption() {
-//   typeSelector.selectedIndex = 0;
-//   nameSelector.selectedIndex = 0
-//   ratingSelector.selectedIndex = 0;
-//   resetChoices(nameSelector)
-//   resetChoices(ratingSelector)
-// }
 
-// function resetChoices(div) {
-//   while (div.childNodes.length > 2) {
-//     div.removeChild(div.lastChild);
-//   }
-// }
 
 function addMonsterToPage(monster) {
   let nameStat = document.createElement('p')
@@ -321,8 +272,6 @@ function addMonsterToPage(monster) {
   monsterCard.appendChild(crHolder)
   crHolder.appendChild(crDeclare)
   crHolder.appendChild(crStat)
-  // defaultOption()
-
 }
 
 
@@ -447,40 +396,9 @@ let lvl20XP = [
   8500,
   12700,
 ]
-
-
 let xpArray = [lvl1XP, lvl2XP, lvl3XP, lvl4XP, lvl5XP, lvl6XP, lvl7XP, lvl8XP, lvl9XP, lvl10XP, lvl11XP, lvl12XP, lvl13XP, lvl14XP, lvl15XP, lvl16XP, lvl17XP, lvl18XP, lvl19XP, lvl20XP]
 
 
-// let cr0xp = 10
-// let croneEigth = 25
-// let crOneFourth = 50
-// let crOneHalf = 100
-// let crOne = 200
-// let crTwo = 450
-// let crThree = 700
-// let crFour = 1100
-// let crFive = 1800
-// let crSix = 2300
-// let crSeven = 2900
-// let crEight = 3900
-// let crNine = 5000
-// let crTen = 5900
-// let crEleven = 7200
-// let crTwelve = 8400
-// let crThirteen = 10000
-// let crFourteen = 11500
-// let crFifteen = 13000
-// let crSixteen = 15000
-// let crSeventeen = 18000
-// let crEighteen = 20000
-// let crNineteen = 22000
-// let crTwenty = 25000
-// let crTwentyOne = 33000
-// let crTwentyTwo = 41000
-// let crTwentyThree = 50000
-// let crTwentyFour = 62000
-// let crThirty = 155000
 
 
 let cr0xp = [0, 10]
@@ -579,7 +497,7 @@ function calculateResults(total) {
     displayResults('medium')
   } else if (total <= hard) {
     displayResults('hard')
-  } else if (total >= deadly) {
+  } else if (total > deadly) {
     displayResults('deadly')
   } else {
     displayResults('error')
@@ -599,21 +517,21 @@ function displayResults(res) {
     resultsArea.appendChild(resultText)
   } else if (res === 'medium') {
     result.innerText = 'MEDIUM'
-    resultText.innerText = `Hoo boy, that's going to be too easy. Your party only needed ${selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][1]} experience for it to be a cakewalk, and you managed to not beat that. Make it HARDER!`
+    resultText.innerText = `The fight should be done quickly, and it will net a small chunk of experience for the party. Consider running another encounter in addition to this before they rest.`
     result.classList.add('result-title')
     resultText.classList.add('result-snark')
     resultsArea.appendChild(result)
     resultsArea.appendChild(resultText)
   } else if (res === 'hard') {
     result.innerText = 'HARD '
-    resultText.innerText = `Hoo boy, that's going to be too easy. Your party only needed ${selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][2]} experience for it to be a cakewalk, and you managed to not beat that. Make it HARDER!`
+    resultText.innerText = `Now we're talking. This will challenge the party and its resources.`
     result.classList.add('result-title')
     resultText.classList.add('result-snark')
     resultsArea.appendChild(result)
     resultsArea.appendChild(resultText)
   } else if (res === 'deadly') {
     result.innerText = 'DEADLY'
-    resultText.innerText = `Hoo boy, that's going to be too easy. Your party only needed ${selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][3]} experience for it to be a cakewalk, and you managed to not beat that. Make it HARDER!`
+    resultText.innerText = `Perfect! This is the reason you DM, to kill your friends with make believe monsters. Now go out there and get em!`
     result.classList.add('result-title')
     resultText.classList.add('result-snark')
     resultsArea.appendChild(result)
