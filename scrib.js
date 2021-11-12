@@ -11,6 +11,22 @@ let partyCompDiv = document.querySelector('#party-comp')
 let firstCompDiv = document.querySelector('#first-comp-div')
 let secondCompDiv = document.querySelector('#second-comp-div')
 let allMonsterCr = document.getElementsByClassName('get-this')
+let monsterNumber = allMonsterCr.length
+let multiplier
+
+if (monsterNumber === 1) {
+  multiplier = 1
+} else if (monsterNumber === 2) {
+  multiplier = 1.5
+} else if (monsterNumber > 2 && monsterNumber < 7) {
+  multiplier = 2
+} else if (monsterNumber > 6 && monsterNumber < 11) {
+  multiplier = 2.5
+} else if (monsterNumber > 10 && monsterNumber < 14) {
+  multiplier = 3
+} else {
+  multiplier = 4
+}
 
 
 for (let i = 1; i < 7; i++) {
@@ -64,8 +80,9 @@ resultsButton.addEventListener('click', testFunction)
 //     multiplier = 4
 //   }
 //   console.log(multiplier)
-//   console.log(totalCR)
+
 //   console.log(monsterNumber)
+//   findTotalMonsterXP()
 //   resultsArea.classList.remove('hidden')
 // }
 
@@ -498,37 +515,37 @@ let crThirty = [30, 155000]
 let crArray = [cr0xp, croneEigth, crOneFourth, crOneHalf, crOne, crTwo, crThree, crFour, crFive, crSix, crSeven, crEight, crNine, crTen, crEleven, crTwelve, crThirteen, crFourteen, crFifteen, crSixteen, crSeventeen, crEighteen, crNineteen, crTwenty, crTwentyOne, crTwentyTwo, crTwentyThree, crTwentyFour, crThirty]
 
 
-function testFunction() {
-  let monsterNumber = allMonsterCr.length
-  let easy = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][0]
-  let medium = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][1]
-  let hard = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][2]
-  let deadly = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][3]
-  let multiplier
-  let totalCR = 0
-  for (let i = 0; i < allMonsterCr.length; i++) {
-    let parsed = eval(allMonsterCr[i].innerText)
-    totalCR += parsed
-  }
-  if (monsterNumber === 1) {
-    multiplier = 1
-  } else if (monsterNumber === 2) {
-    multiplier = 1.5
-  } else if (monsterNumber > 2 && monsterNumber < 7) {
-    multiplier = 2
-  } else if (monsterNumber > 6 && monsterNumber < 11) {
-    multiplier = 2.5
-  } else if (monsterNumber > 10 && monsterNumber < 14) {
-    multiplier = 3
-  } else {
-    multiplier = 4
-  }
-  console.log(multiplier)
-  console.log(totalCR)
-  console.log(monsterNumber)
-  findTotalMonsterXP()
-  resultsArea.classList.remove('hidden')
-}
+// function testFunction() {
+//   let monsterNumber = allMonsterCr.length
+//   let easy = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][0]
+//   let medium = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][1]
+//   let hard = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][2]
+//   let deadly = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][3]
+//   let multiplier
+// let totalCR = 0
+// for (let i = 0; i < allMonsterCr.length; i++) {
+//   let parsed = eval(allMonsterCr[i].innerText)
+//   totalCR += parsed
+// }
+//   if (monsterNumber === 1) {
+//     multiplier = 1
+//   } else if (monsterNumber === 2) {
+//     multiplier = 1.5
+//   } else if (monsterNumber > 2 && monsterNumber < 7) {
+//     multiplier = 2
+//   } else if (monsterNumber > 6 && monsterNumber < 11) {
+//     multiplier = 2.5
+//   } else if (monsterNumber > 10 && monsterNumber < 14) {
+//     multiplier = 3
+//   } else {
+//     multiplier = 4
+//   }
+//   console.log(multiplier)
+//   // console.log(totalCR)
+//   console.log(monsterNumber)
+//   findTotalMonsterXP()
+//   resultsArea.classList.remove('hidden')
+// }
 
 
 function findTotalMonsterXP() {
@@ -536,14 +553,77 @@ function findTotalMonsterXP() {
   for (let i = 0; i < allMonsterCr.length; i++) {
     for (let j = 0; j < crArray.length; j++) {
       if (eval(allMonsterCr[i].innerText) == crArray[j][0]) {
-
         totalMonsterXp += crArray[j][1]
       }
-
     }
+  }
+  ///   v    here is where you'll call the calculate function
+  calculateResults(totalMonsterXp)
+}
+function testFunction() {
+  resultsArea.classList.remove('hidden')
 
+  findTotalMonsterXP()
+
+}
+function calculateResults(total) {
+
+  let easy = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][0]
+  let medium = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][1]
+  let hard = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][2]
+  let deadly = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][3]
+
+  if (total <= easy) {
+    displayResults('easy')
+  } else if (total <= medium) {
+    displayResults('medium')
+  } else if (total <= hard) {
+    displayResults('hard')
+  } else if (total >= deadly) {
+    displayResults('deadly')
+  } else {
+    displayResults('error')
   }
 
-  ///   v    here is where you'll call the calculate function
-  console.log(totalMonsterXp)
+}
+
+function displayResults(res) {
+  let result = document.createElement('h1')
+  let resultText = document.createElement('p')
+  if (res === 'easy') {
+    result.innerText = 'EASY '
+    resultText.innerText = `Hoo boy, that's going to be too easy. Your party only needed ${selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][0]} experience for it to be a cakewalk, and you managed to not beat that. Make it HARDER!`
+    result.classList.add('result-title')
+    resultText.classList.add('result-snark')
+    resultsArea.appendChild(result)
+    resultsArea.appendChild(resultText)
+  } else if (res === 'medium') {
+    result.innerText = 'MEDIUM'
+    resultText.innerText = `Hoo boy, that's going to be too easy. Your party only needed ${selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][1]} experience for it to be a cakewalk, and you managed to not beat that. Make it HARDER!`
+    result.classList.add('result-title')
+    resultText.classList.add('result-snark')
+    resultsArea.appendChild(result)
+    resultsArea.appendChild(resultText)
+  } else if (res === 'hard') {
+    result.innerText = 'HARD '
+    resultText.innerText = `Hoo boy, that's going to be too easy. Your party only needed ${selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][2]} experience for it to be a cakewalk, and you managed to not beat that. Make it HARDER!`
+    result.classList.add('result-title')
+    resultText.classList.add('result-snark')
+    resultsArea.appendChild(result)
+    resultsArea.appendChild(resultText)
+  } else if (res === 'deadly') {
+    result.innerText = 'DEADLY'
+    resultText.innerText = `Hoo boy, that's going to be too easy. Your party only needed ${selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][3]} experience for it to be a cakewalk, and you managed to not beat that. Make it HARDER!`
+    result.classList.add('result-title')
+    resultText.classList.add('result-snark')
+    resultsArea.appendChild(result)
+    resultsArea.appendChild(resultText)
+  } else {
+    result.innerText = 'Whoops'
+    resultText.innerText = "I don't know what happened, reload the page and try again. It's probably your fault, not mine."
+    result.classList.add('result-title')
+    resultText.classList.add('result-snark')
+    resultsArea.appendChild(result)
+    resultsArea.appendChild(resultText)
+  }
 }
