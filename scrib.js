@@ -34,38 +34,40 @@ for (let i = 1; i < 21; i++) {
 
 
 resultsButton.addEventListener('click', testFunction)
+//convert totalCR to xp
+//compare totalCRxp to easy, medium, hard, deadly
+//append that plus text to results
 
-
-function testFunction() {
-  let monsterNumber = allMonsterCr.length
-  let easy = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][0]
-  let medium = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][1]
-  let hard = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][2]
-  let deadly = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][3]
-  let multiplier
-  let totalCR = 0
-  for (let i = 0; i < allMonsterCr.length; i++) {
-    let parsed = eval(allMonsterCr[i].innerText)
-    totalCR += parsed
-  }
-  if (monsterNumber === 1) {
-    multiplier = 1
-  } else if (monsterNumber === 2) {
-    multiplier = 1.5
-  } else if (monsterNumber > 2 && monsterNumber < 7) {
-    multiplier = 2
-  } else if (monsterNumber > 6 && monsterNumber < 11) {
-    multiplier = 2.5
-  } else if (monsterNumber > 10 && monsterNumber < 14) {
-    multiplier = 3
-  } else {
-    multiplier = 4
-  }
-  console.log(multiplier)
-  console.log(totalCR)
-  console.log(monsterNumber)
-  resultsArea.classList.remove('hidden')
-}
+// function testFunction() {
+//   let monsterNumber = allMonsterCr.length
+//   let easy = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][0]
+//   let medium = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][1]
+//   let hard = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][2]
+//   let deadly = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][3]
+//   let multiplier
+//   let totalCR = 0
+//   for (let i = 0; i < allMonsterCr.length; i++) {
+//     let parsed = eval(allMonsterCr[i].innerText)
+//     totalCR += parsed
+//   }
+//   if (monsterNumber === 1) {
+//     multiplier = 1
+//   } else if (monsterNumber === 2) {
+//     multiplier = 1.5
+//   } else if (monsterNumber > 2 && monsterNumber < 7) {
+//     multiplier = 2
+//   } else if (monsterNumber > 6 && monsterNumber < 11) {
+//     multiplier = 2.5
+//   } else if (monsterNumber > 10 && monsterNumber < 14) {
+//     multiplier = 3
+//   } else {
+//     multiplier = 4
+//   }
+//   console.log(multiplier)
+//   console.log(totalCR)
+//   console.log(monsterNumber)
+//   resultsArea.classList.remove('hidden')
+// }
 
 
 //LEFT FUNCTIONS
@@ -433,4 +435,115 @@ let lvl20XP = [
 let xpArray = [lvl1XP, lvl2XP, lvl3XP, lvl4XP, lvl5XP, lvl6XP, lvl7XP, lvl8XP, lvl9XP, lvl10XP, lvl11XP, lvl12XP, lvl13XP, lvl14XP, lvl15XP, lvl16XP, lvl17XP, lvl18XP, lvl19XP, lvl20XP]
 
 
+// let cr0xp = 10
+// let croneEigth = 25
+// let crOneFourth = 50
+// let crOneHalf = 100
+// let crOne = 200
+// let crTwo = 450
+// let crThree = 700
+// let crFour = 1100
+// let crFive = 1800
+// let crSix = 2300
+// let crSeven = 2900
+// let crEight = 3900
+// let crNine = 5000
+// let crTen = 5900
+// let crEleven = 7200
+// let crTwelve = 8400
+// let crThirteen = 10000
+// let crFourteen = 11500
+// let crFifteen = 13000
+// let crSixteen = 15000
+// let crSeventeen = 18000
+// let crEighteen = 20000
+// let crNineteen = 22000
+// let crTwenty = 25000
+// let crTwentyOne = 33000
+// let crTwentyTwo = 41000
+// let crTwentyThree = 50000
+// let crTwentyFour = 62000
+// let crThirty = 155000
 
+
+let cr0xp = [0, 10]
+let croneEigth = [.125, 25]
+let crOneFourth = [.25, 50]
+let crOneHalf = [.5, 100]
+let crOne = [1, 200]
+let crTwo = [2, 450]
+let crThree = [3, 700]
+let crFour = [4, 1100]
+let crFive = [5, 1800]
+let crSix = [6, 2300]
+let crSeven = [7, 2900]
+let crEight = [8, 3900]
+let crNine = [9, 5000]
+let crTen = [10, 5900]
+let crEleven = [11, 7200]
+let crTwelve = [12, 8400]
+let crThirteen = [13, 10000]
+let crFourteen = [14, 11500]
+let crFifteen = [15, 13000]
+let crSixteen = [16, 15000]
+let crSeventeen = [17, 18000]
+let crEighteen = [18, 20000]
+let crNineteen = [19, 22000]
+let crTwenty = [20, 25000]
+let crTwentyOne = [21, 33000]
+let crTwentyTwo = [22, 41000]
+let crTwentyThree = [23, 50000]
+let crTwentyFour = [24, 62000]
+let crThirty = [30, 155000]
+let crArray = [cr0xp, croneEigth, crOneFourth, crOneHalf, crOne, crTwo, crThree, crFour, crFive, crSix, crSeven, crEight, crNine, crTen, crEleven, crTwelve, crThirteen, crFourteen, crFifteen, crSixteen, crSeventeen, crEighteen, crNineteen, crTwenty, crTwentyOne, crTwentyTwo, crTwentyThree, crTwentyFour, crThirty]
+
+
+function testFunction() {
+  let monsterNumber = allMonsterCr.length
+  let easy = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][0]
+  let medium = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][1]
+  let hard = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][2]
+  let deadly = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][3]
+  let multiplier
+  let totalCR = 0
+  for (let i = 0; i < allMonsterCr.length; i++) {
+    let parsed = eval(allMonsterCr[i].innerText)
+    totalCR += parsed
+  }
+  if (monsterNumber === 1) {
+    multiplier = 1
+  } else if (monsterNumber === 2) {
+    multiplier = 1.5
+  } else if (monsterNumber > 2 && monsterNumber < 7) {
+    multiplier = 2
+  } else if (monsterNumber > 6 && monsterNumber < 11) {
+    multiplier = 2.5
+  } else if (monsterNumber > 10 && monsterNumber < 14) {
+    multiplier = 3
+  } else {
+    multiplier = 4
+  }
+  console.log(multiplier)
+  console.log(totalCR)
+  console.log(monsterNumber)
+  findTotalMonsterXP()
+  resultsArea.classList.remove('hidden')
+}
+
+
+function findTotalMonsterXP() {
+  let totalMonsterXp = 0
+  for (let i = 0; i < allMonsterCr.length; i++) {
+    for (let j = 0; j < crArray.length; j++) {
+      if (eval(allMonsterCr[i].innerText) == crArray[j][0]) {
+
+        totalMonsterXp += crArray[j][1]
+      }
+
+    }
+
+  }
+
+  ///   v    here is where you'll call the calculate function
+  console.log(totalMonsterXp)
+}
