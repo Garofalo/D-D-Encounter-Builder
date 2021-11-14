@@ -171,15 +171,13 @@ function addStatsToPage(monster) {
   acStat.innerText = `Armor Class : ${armor_class}`
   hpStat.innerText = `Hit Points : ${hit_points}`
   crStat.innerText = `Challenge Rating : ${challenge_rating}`
-  statDEX.innerText = `DEX: ${dexterity}`
-  statSTR.innerText = `STR: ${strength}`
-  statCON.innerText = `CON: ${constitution}`
-  statWIS.innerText = `WIS: ${wisdom}`
-  statINT.innerText = `INT: ${intelligence}`
-  statCHA.innerText = `CHA: ${charisma}`
-  statP.innerText = 'Stats'
-  statP.classList.add('underline')
-
+  statDEX.innerText = `DEXTERITY: ${dexterity}`
+  statSTR.innerText = `STRENGTH: ${strength}`
+  statCON.innerText = `CONSTITUTION: ${constitution}`
+  statWIS.innerText = `WISDOM: ${wisdom}`
+  statINT.innerText = `INTELLIGENCE: ${intelligence}`
+  statCHA.innerText = `CHARISMA: ${charisma}`
+  statP.innerText = 'STATS'
   monsterStats.appendChild(statP)
   monsterStats.appendChild(statSTR)
   monsterStats.appendChild(statDEX)
@@ -201,7 +199,6 @@ function defaultOption() {
   typeSelector.selectedIndex = 0;
   nameSelector.selectedIndex = 0
   ratingSelector.selectedIndex = 0;
-
   resetChoices(nameSelector)
   resetChoices(ratingSelector)
 }

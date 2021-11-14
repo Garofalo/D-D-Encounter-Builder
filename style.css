@@ -63,10 +63,6 @@ h1{
   
 }
 
-.underline{
-  text-decoration: underline;
-}
-
 .hidden{
   display: none;
 }
@@ -189,7 +185,7 @@ form p{
     -webkit-text-stroke-color: black;
     -webkit-text-stroke-width: 2px;
     font-family: 'Bubblegum Sans', cursive;
-  text-decoration: underline;
+ 
 }
 select{
   margin-bottom: 1em;

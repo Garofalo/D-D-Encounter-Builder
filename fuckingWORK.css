@@ -49,6 +49,11 @@ header>h1{
   text-align:center;
   background-color: black;
 }
+#link-button:hover{
+  color: #000000;
+  background-color: #FFFFFF;
+  border:0.1em solid black;
+}
 #reset{
   margin-left: 3%;
   height: 3vw;
@@ -65,6 +70,11 @@ header>h1{
   color:#FFFFFF;
   text-align:center;
   background-color: black;
+}
+#reset:hover{
+  color: #000000;
+  background-color: #FFFFFF;
+  border:0.1em solid black;
 }
 footer {
   background-color:rgb(109, 108, 108);
