@@ -9,7 +9,10 @@ header {
   max-height: 10vh;
   border-bottom:3px solid black;
   border-radius:0px 0px 15px 15px ;
+  display: flex;
   overflow: hidden;
+  align-items: center;
+  justify-content: center;
 }
 header>h1{
   font-size: 3rem;
@@ -26,6 +29,42 @@ header>h1{
                 3px 3px 0px lightgray; 
   overflow: hidden;
   border-radius:0px 0px 15px 15px ;
+  order: 2;
+  flex-basis: 100%;
+}
+#link-button{
+  margin-left: 3%;
+  height: 3vw;
+  font-size: 1vw;
+  order: 1;
+  flex-basis: 15vw; 
+  display: inline-block;
+  border: 0.1em solid #FFFFFF;
+  margin: 0 0.3em 0.3em 2%;
+  border-radius: 10%;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight:300;
+  color:#FFFFFF;
+  text-align:center;
+  background-color: black;
+}
+#reset{
+  margin-left: 3%;
+  height: 3vw;
+  font-size: 1vw;
+  order: 3;
+  flex-basis: 15vw; 
+  display: inline-block;
+  border: 0.1em solid #FFFFFF;
+  margin: 0 0.3em 0.3em 2%;
+  border-radius: 10%;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight:300;
+  color:#FFFFFF;
+  text-align:center;
+  background-color: black;
 }
 footer {
   background-color:rgb(109, 108, 108);
@@ -42,26 +81,25 @@ img{
   max-height: 7vh;
 }
 #results-button{
- 
-      display: inline-block;
-      border: 0.1em solid #FFFFFF;
-      margin: 0 0.3em 0.3em 0;
-      border-radius: 10%;
-      box-sizing: border-box;
-      text-decoration: none;
-      width: 15vw;
-      height: 10vh;
-      font-weight:300;
-      color:#FFFFFF;
-      text-align:center;
-      background-color: black;
-      font-size: large;
-    }
-  #results-button:hover{
-    color: #000000;
-    background-color: #FFFFFF;
-    border:0.1em solid black;
-  }
+  display: inline-block;
+  border: 0.1em solid #FFFFFF;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 10%;
+  box-sizing: border-box;
+  text-decoration: none;
+  width: 15vw;
+  height: 10vh;
+  font-weight:300;
+  color:#FFFFFF;
+  text-align:center;
+  background-color: black;
+  font-size: large;
+}
+#results-button:hover{
+  color: #000000;
+  background-color: #FFFFFF;
+  border:0.1em solid black;
+}
 
 
 
@@ -70,7 +108,6 @@ img{
   display: flex;
   flex-direction: column;
   order:2;
-  
   width: 60vw;
 }
 #center >*{
@@ -85,13 +122,11 @@ img{
   align-self: center;
   justify-self: center;
   text-align: center;
-   
-    font-size: 2vw;
-    -webkit-text-fill-color: #DA8625;
-    -webkit-text-stroke-color: black;
-    -webkit-text-stroke-width: 2px;
-    font-family: 'Bubblegum Sans', cursive;
-  
+  font-size: 2vw;
+  -webkit-text-fill-color: #DA8625;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 2px;
+  font-family: 'Bubblegum Sans', cursive;
 }
 #party-comp{
   width: 25vw;
@@ -101,7 +136,6 @@ img{
   justify-content: space-evenly;
   flex-direction: column;
 }
-
 #level-word, #size-word{
   font-size:2vw ;
   margin-bottom:2%;
@@ -135,7 +169,6 @@ img{
 .hidden{
   display: none;
 }
-
 .monster-card{
   display: flex;
   flex-direction: column;
@@ -143,13 +176,11 @@ img{
   justify-content: center;
   border-radius: 2%;
   box-sizing: border-box;
-  /* border: 1px solid black; */
   padding:2vw 2.2vw 2vw 1.5vw;
   background-image: url('scroll-g67d164499_640.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size:contain;
-  
 }
 .monster-card p{
   font-size: 1vw;
@@ -189,12 +220,10 @@ img{
   order:1;
   display:flex;
   flex-direction: column;
-
   justify-content: space-evenly;
   width: 20vw;
   align-items: center;
   border-radius: 0 5% 5% 0;
-  
   padding: 1%;
   height: 80vh;
 }
@@ -209,39 +238,41 @@ img{
   border-radius: 10%;
   background-color: #84a5cf3a;
   }
- 
   
-  .party-level-button{
-    border-radius: 50%;
-    width: 4vw;
-    text-align: center;
-    font-size: 2vw;
-    margin: 2%;
-    background-color: #DA8625;
-    
-  }
- 
-  #bubbles>*{
-    margin: 0 2% 2% 2%; 
-    text-align: center;
-    font-size: 2vw;
-    border-radius: 50%;
-    background-color: #DA8625;
-  }
-  #bubbles{
-  display: flex;
-  width: 20vw;
-  justify-content: center;
-  border: 2px solid black;
-  border-radius: 12%;
-   background-color: #84a5cf3a;
-
-  padding: 10px 0;
+.party-level-button{
+  border-radius: 50%;
+  width: 4vw;
+  text-align: center;
+  font-size: 2vw;
+  margin: 2%;
+  background-color: #DA8625;
   
-  }
-
+}
+.party-size-button{
+  margin: 0 2% 2% 2%; 
+  text-align: center;
+  font-size: 2vw;
+  border-radius: 50%;
+  background-color: #DA8625;
+}
+#bubbles{
+display: flex;
+width: 20vw;
+justify-content: center;
+border: 2px solid black;
+border-radius: 12%;
+background-color: #84a5cf3a;
+padding: 10px 0;
+}
+.selected-party-size, .selected-level{
+  background-color: black;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-color: #DA8625;
+  -webkit-text-stroke-width: 2px;
+  font-family: 'Bubblegum Sans', cursive;
+}
   /* RIGHT */
-  #right{
+#right{
   order:3;
   width: 20vw;
   display: flex;
@@ -253,49 +284,41 @@ img{
   border-radius: 10%;
   border:2px solid black;
   background-color: #84a5cf3a;
-  /* background: repeating-linear-gradient(
-  45deg,
-  #DA8625,
-  #DA8625 10px,
-  #A26A2A 10px,
-  #A26A2A 20px */
-
-  }
-  /* form */h3, p{ 
+}
+h3, p{ 
     font-size: 2vw;
     -webkit-text-fill-color: #DA8625;
     -webkit-text-stroke-color: black;
     -webkit-text-stroke-width: 2px;
     font-family: 'Bubblegum Sans', cursive;
   }
-  form{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  }
-  select{
-    width: 20ch;
-    box-shadow: 0 3px 20px 0 #0000003b;
-  }
-  #add-to-fight
-    {
-      display: inline-block;
-      border: 0.1em solid #FFFFFF;
-      margin: 0 0.3em 0.3em 0;
-      border-radius: 10%;
-      box-sizing: border-box;
-      text-decoration: none;
-      width: 165px;
-      height: 250px;
-      font-weight:300;
-      color:#FFFFFF;
-      text-align:center;
-      background-color: black;
-      font-size: large;
-    }
-  #add-to-fight:hover{
-    color: #000000;
-    background-color: #FFFFFF;
-    border:0.1em solid black;
-  }
+form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+select{
+  width: 20ch;
+  box-shadow: 0 3px 20px 0 #0000003b;
+}
+#add-to-fight{
+  display: inline-block;
+  border: 0.1em solid #FFFFFF;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 10%;
+  box-sizing: border-box;
+  text-decoration: none;
+  width: 165px;
+  height: 250px;
+  font-weight:300;
+  color:#FFFFFF;
+  text-align:center;
+  background-color: black;
+  font-size: large;
+}
+#add-to-fight:hover{
+  color: #000000;
+  background-color: #FFFFFF;
+  border:0.1em solid black;
+}

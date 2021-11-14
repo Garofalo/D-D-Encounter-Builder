@@ -11,8 +11,14 @@ let partyCompDiv = document.querySelector('#party-comp')
 let firstCompDiv = document.querySelector('#first-comp-div')
 let secondCompDiv = document.querySelector('#second-comp-div')
 let allMonsterCr = document.getElementsByClassName('get-this')
+let resetButton = document.querySelector('#reset')
+let typeSelector = document.querySelector('#monster-type')
+let ratingSelector = document.querySelector('#monster-cr')
+let nameSelector = document.querySelector('#monster-name')
+let addToFight = document.querySelector('#add-to-fight')
+let monsterComp = document.querySelector('#monster-comp')
 
-
+resetButton.addEventListener('click', resetFight)
 
 function calculateMultiplier(toCalc) {
   let monsterNumber = eval(allMonsterCr.length)
@@ -43,7 +49,15 @@ for (let i = 1; i < 7; i++) {
   partyNumButtons.addEventListener('click', makeSelectedPartySize)
 }
 
-
+function resetFight() {
+  monsterComp.innerHTML = ''
+  typeSelector.selectedIndex = 0
+  nameSelector.selectedIndex = 0
+  ratingSelector.selectedIndex = 0;
+  resetChoices(ratingSelector)
+  resetChoices(nameSelector)
+  resultsArea.innerHTML = ''
+}
 
 
 for (let i = 1; i < 21; i++) {
@@ -112,11 +126,7 @@ let getSiblings = function (e) {
 
 
 //MONSTER PART
-let typeSelector = document.querySelector('#monster-type')
-let ratingSelector = document.querySelector('#monster-cr')
-let nameSelector = document.querySelector('#monster-name')
-let addToFight = document.querySelector('#add-to-fight')
-let monsterComp = document.querySelector('#monster-comp')
+
 
 addToFight.addEventListener('click', getMonsterStats)
 
@@ -462,9 +472,9 @@ function findTotalMonsterXP() {
         totalMonsterXp += crArray[j][1]
       }
     }
-    // resultsArea.classList.remove('hidden')
+
   }
-  ///   v    here is where you'll call the calculate function
+
   resultsArea.classList.remove('hidden')
   calculateResults(totalMonsterXp)
 }

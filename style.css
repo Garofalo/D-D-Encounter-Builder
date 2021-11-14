@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
-/* test */
-
 
 
 button{
@@ -19,14 +17,30 @@ button{
   font-size: large;
 }
   
-  button:hover{
-    color: #000000;
-    background-color: #FFFFFF;
-    border:0.1em solid black;
-  }
-  
+button:hover{
+  color: #000000;
+  background-color: #FFFFFF;
+  border:0.1em solid black;
+}
+#link-button{
+  margin-left: 3%;
+  height: 3vw;
+  font-size: 1vw;
+  order: 1;
+  flex-basis: 15vw; 
+}
 
-
+header {
+  background-color: #d52e3f;
+  padding: 0px;
+  box-sizing: border-box;
+  max-height: 10vh;
+  border-bottom:3px solid black;
+  border-radius:0px 0px 15px 15px ;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
 
  /* TEST */
 h1{
@@ -44,6 +58,9 @@ h1{
                 3px 3px 0px lightgray; 
   overflow: hidden;
   border-radius:0px 0px 15px 15px ;
+  order: 2;
+  flex-basis: 100%;
+  
 }
 
 .underline{
@@ -70,6 +87,8 @@ header {
   border-bottom:3px solid black;
   border-radius:0px 0px 15px 15px ;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 select{
   width: 20ch;
@@ -105,17 +124,10 @@ form{
   border:2px solid black;
   border:2px solid black;
   background-color: #84a5cf3a;
-  height: 100vh;
+  
 
 }
-.monster-sidebar:hover{
-  background: repeating-linear-gradient(
-  45deg,
-  #fff,
-  #fff 10px,
-  #fff 10px,
-  #fff 20px)
-}
+
 
 
 #results{
@@ -125,7 +137,7 @@ form{
   order:1;
   flex-direction: column;
   background-color:white;
- 
+
   align-items: center;
 }
 #monster-stats{
@@ -169,7 +181,7 @@ main{
   font-size: xx-large;
 }
 h2{
-  font-size: xx-large;
+  font-size: 4vw
 }
 form p{
   font-size: 2vw;
@@ -181,7 +193,6 @@ form p{
 }
 select{
   margin-bottom: 1em;
-  
 }
 
 @media (max-width: 768px) {
