@@ -11,24 +11,30 @@ let partyCompDiv = document.querySelector('#party-comp')
 let firstCompDiv = document.querySelector('#first-comp-div')
 let secondCompDiv = document.querySelector('#second-comp-div')
 let allMonsterCr = document.getElementsByClassName('get-this')
-let monsterNumber = allMonsterCr.length
-let multiplier
 
-if (monsterNumber === 1) {
-  multiplier = 1
-} else if (monsterNumber === 2) {
-  multiplier = 1.5
-} else if (monsterNumber > 2 && monsterNumber < 7) {
-  multiplier = 2
-} else if (monsterNumber > 6 && monsterNumber < 11) {
-  multiplier = 2.5
-} else if (monsterNumber > 10 && monsterNumber < 14) {
-  multiplier = 3
-} else {
-  multiplier = 4
+
+
+function calculateMultiplier(toCalc) {
+  let monsterNumber = eval(allMonsterCr.length)
+  let multiplier
+  let output
+  if (monsterNumber === 1) {
+    multiplier = 1
+  } else if (monsterNumber === 2) {
+    multiplier = 1.5
+  } else if (monsterNumber > 2 && monsterNumber < 7) {
+    multiplier = 2
+  } else if (monsterNumber > 6 && monsterNumber < 11) {
+    multiplier = 2.5
+  } else if (monsterNumber > 10 && monsterNumber < 14) {
+    multiplier = 3
+  } else {
+    multiplier = 4
+  }
+
+  output = toCalc * multiplier
+  return output
 }
-
-
 for (let i = 1; i < 7; i++) {
   let partyNumButtons = document.createElement('button')
   partyNumButtons.innerText = `${i}`
@@ -49,7 +55,7 @@ for (let i = 1; i < 21; i++) {
 }
 
 
-resultsButton.addEventListener('click', testFunction)
+resultsButton.addEventListener('click', findTotalMonsterXP)
 
 //LEFT FUNCTIONS
 function makeSelectedPartySize(event) {
@@ -58,8 +64,12 @@ function makeSelectedPartySize(event) {
   removeSelected(forRemoval)
   firstCompDiv.innerHTML = ''
   let partySizeDisplay = document.createElement('p')
+  let partySizeWord = document.createElement('h3')
+  partySizeWord.innerText = 'Number Of Adventurers'
+  partySizeWord.setAttribute('id', 'size-word')
   partySizeDisplay.setAttribute('id', 'size-to-display')
   partySizeDisplay.innerText = selectedPartySize[0].innerText
+  firstCompDiv.appendChild(partySizeWord)
   firstCompDiv.appendChild(partySizeDisplay)
 }
 function makeSelectedLevel(event) {
@@ -68,9 +78,12 @@ function makeSelectedLevel(event) {
   secondCompDiv.innerHTML = ''
   removeSelected(forRemoval)
   let partyLevelDisplay = document.createElement('p')
+  let partyLevelWord = document.createElement('h3')
+  partyLevelWord.innerText = 'Level of Party'
+  partyLevelWord.setAttribute('id', 'level-word')
   partyLevelDisplay.setAttribute('id', 'level-to-display')
   partyLevelDisplay.innerText = selectedLevel[0].innerText
-
+  secondCompDiv.appendChild(partyLevelWord)
   secondCompDiv.appendChild(partyLevelDisplay)
 
 }
@@ -138,6 +151,7 @@ fetchData();
 
 function getTypeList(typeList) {
 
+
   let distictTypes = [...new Set(typeList)].sort();
   distictTypes.forEach((type) => {
     let typeOption = document.createElement('option')
@@ -149,6 +163,10 @@ function getTypeList(typeList) {
 }
 typeSelector.addEventListener('change', getCR)
 async function getCR(event) {
+  nameSelector.selectedIndex = 0
+  ratingSelector.selectedIndex = 0;
+  resetChoices(ratingSelector)
+  resetChoices(nameSelector)
   let type = event.target.value
   let i = 1
   let monsters = [];
@@ -176,6 +194,8 @@ async function getCR(event) {
 
 function populateCrSelector(crList) {
 
+  resetChoices(nameSelector)
+  nameSelector.selectedIndex = 0
   let distictCR = [...new Set(crList)].sort(function (a, b) { return a - b })
 
   distictCR.forEach((cr) => {
@@ -216,7 +236,7 @@ async function getMonsterName(event) {
 }
 
 function populateNameSelector(nameList) {
-
+  resetChoices(nameSelector)
   let distictName = [...new Set(nameList)].sort()
 
   distictName.forEach((name) => {
@@ -433,38 +453,6 @@ let crThirty = [30, 155000]
 let crArray = [cr0xp, croneEigth, crOneFourth, crOneHalf, crOne, crTwo, crThree, crFour, crFive, crSix, crSeven, crEight, crNine, crTen, crEleven, crTwelve, crThirteen, crFourteen, crFifteen, crSixteen, crSeventeen, crEighteen, crNineteen, crTwenty, crTwentyOne, crTwentyTwo, crTwentyThree, crTwentyFour, crThirty]
 
 
-// function testFunction() {
-//   let monsterNumber = allMonsterCr.length
-//   let easy = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][0]
-//   let medium = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][1]
-//   let hard = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][2]
-//   let deadly = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][3]
-//   let multiplier
-// let totalCR = 0
-// for (let i = 0; i < allMonsterCr.length; i++) {
-//   let parsed = eval(allMonsterCr[i].innerText)
-//   totalCR += parsed
-// }
-//   if (monsterNumber === 1) {
-//     multiplier = 1
-//   } else if (monsterNumber === 2) {
-//     multiplier = 1.5
-//   } else if (monsterNumber > 2 && monsterNumber < 7) {
-//     multiplier = 2
-//   } else if (monsterNumber > 6 && monsterNumber < 11) {
-//     multiplier = 2.5
-//   } else if (monsterNumber > 10 && monsterNumber < 14) {
-//     multiplier = 3
-//   } else {
-//     multiplier = 4
-//   }
-//   console.log(multiplier)
-//   // console.log(totalCR)
-//   console.log(monsterNumber)
-//   findTotalMonsterXP()
-//   resultsArea.classList.remove('hidden')
-// }
-
 
 function findTotalMonsterXP() {
   let totalMonsterXp = 0
@@ -474,40 +462,41 @@ function findTotalMonsterXP() {
         totalMonsterXp += crArray[j][1]
       }
     }
+    // resultsArea.classList.remove('hidden')
   }
   ///   v    here is where you'll call the calculate function
+  resultsArea.classList.remove('hidden')
   calculateResults(totalMonsterXp)
 }
-function testFunction() {
-  resultsArea.classList.remove('hidden')
 
-  findTotalMonsterXP()
-
-}
 function calculateResults(total) {
 
   let easy = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][0]
   let medium = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][1]
   let hard = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][2]
   let deadly = selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][3]
-
-  if (total <= easy) {
+  let multipliedTotal = calculateMultiplier(total)
+  if (multipliedTotal <= easy) {
     displayResults('easy')
-  } else if (total <= medium) {
+  } else if (multipliedTotal <= medium) {
     displayResults('medium')
-  } else if (total <= hard) {
+  } else if (multipliedTotal <= hard) {
     displayResults('hard')
-  } else if (total > deadly) {
+  } else if (multipliedTotal >= deadly) {
     displayResults('deadly')
   } else {
     displayResults('error')
   }
 
+
+
+  console.log(multipliedTotal)
 }
 
 function displayResults(res) {
   let result = document.createElement('h1')
   let resultText = document.createElement('p')
+  resultsArea.innerHTML = ''
   if (res === 'easy') {
     result.innerText = 'EASY '
     resultText.innerText = `Hoo boy, that's going to be too easy. Your party only needed ${selectedPartySize[0].innerText * xpArray[`${selectedLevel[0].innerText}`][0]} experience for it to be a cakewalk, and you managed to not beat that. Make it HARDER!`
@@ -543,5 +532,11 @@ function displayResults(res) {
     resultText.classList.add('result-snark')
     resultsArea.appendChild(result)
     resultsArea.appendChild(resultText)
+  }
+}
+function resetChoices(div) {
+
+  while (div.childNodes.length > 2) {
+    div.removeChild(div.lastChild);
   }
 }

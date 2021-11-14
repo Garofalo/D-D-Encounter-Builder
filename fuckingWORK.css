@@ -41,6 +41,27 @@ img{
   height: 7vh;
   max-height: 7vh;
 }
+#results-button{
+ 
+      display: inline-block;
+      border: 0.1em solid #FFFFFF;
+      margin: 0 0.3em 0.3em 0;
+      border-radius: 10%;
+      box-sizing: border-box;
+      text-decoration: none;
+      width: 15vw;
+      height: 10vh;
+      font-weight:300;
+      color:#FFFFFF;
+      text-align:center;
+      background-color: black;
+      font-size: large;
+    }
+  #results-button:hover{
+    color: #000000;
+    background-color: #FFFFFF;
+    border:0.1em solid black;
+  }
 
 
 
@@ -64,6 +85,13 @@ img{
   align-self: center;
   justify-self: center;
   text-align: center;
+   
+    font-size: 2vw;
+    -webkit-text-fill-color: #DA8625;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 2px;
+    font-family: 'Bubblegum Sans', cursive;
+  
 }
 #party-comp{
   width: 25vw;
@@ -73,11 +101,26 @@ img{
   justify-content: space-evenly;
   flex-direction: column;
 }
+
+#level-word, #size-word{
+  font-size:2vw ;
+  margin-bottom:2%;
+  text-align: center;
+}
+#size-to-display, #level-to-display{
+  font-size: 5vw;
+  background-color: #FFFFFF;
+  border: .5vw solid black;
+  border-radius: 50%;
+  padding:3vw;
+  text-align: center;
+  background-color: #84a5cf3a;
+}
 #monster-comp{
   display: flex;
   width: 25vw;
   flex-wrap: wrap;
-  align-content: space-around;
+  align-content: space-evenly;
   justify-content: space-evenly;
 }
 .start{
@@ -100,12 +143,19 @@ img{
   justify-content: center;
   border-radius: 2%;
   box-sizing: border-box;
-  border: 1px solid black;
-  padding:5px;
+  /* border: 1px solid black; */
+  padding:2vw 2.2vw 2vw 1.5vw;
+  background-image: url('scroll-g67d164499_640.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:contain;
+  
 }
 .monster-card p{
   font-size: 1vw;
-  text-align: center;
+  -webkit-text-fill-color: rgb(239, 243, 15)29;
+  -webkit-text-stroke-color: #000000;
+  -webkit-text-stroke-width: 1px; 
 }
 .cr{
   display: flex;
@@ -117,7 +167,21 @@ img{
   align-items: center;
   display: flex;
 }
-
+.result-title{
+  font-size: 4vw;
+  -webkit-text-fill-color:#DA8625;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 2px;
+  text-align: center; 
+}
+.result-snark{
+  text-align: center;
+}
+#center-bottom{
+  display: flex;
+  flex-direction: column;
+  flex:2 1 20vh;
+}
 
 /* LEFT */
 
@@ -125,58 +189,55 @@ img{
   order:1;
   display:flex;
   flex-direction: column;
-  background-color: chartreuse;
+
   justify-content: space-evenly;
   width: 20vw;
   align-items: center;
   border-radius: 0 5% 5% 0;
-  height: 100vh;
+  
+  padding: 1%;
+  height: 80vh;
 }
-
+#left>p{
+  flex-basis: 3vh;
+  flex-shrink: 3;
+}
 #party-size-buttons{
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  width:85%;
-  height: 75%;
-  flex-basis:20%;
-  justify-content: space-around;
-  justify-self: flex-start;
+  border: 2px solid black;
+  border-radius: 10%;
+  background-color: #84a5cf3a;
   }
-  .party-size-button{
-    border-radius: 50%;
-    width: 15%;
-    text-align: center;
-    font-size: 1vw;
-    
-  }
+ 
+  
   .party-level-button{
     border-radius: 50%;
-    width: 15%;
+    width: 4vw;
     text-align: center;
-    font-size: 1vw;
+    font-size: 2vw;
+    margin: 2%;
+    background-color: #DA8625;
     
   }
-  #party-size-buttons>*{
-    margin:5%;
-    height: 15%;
-    
-  }
+ 
   #bubbles>*{
-    margin:2%;
-    height:20%;
-    width: 10%;
+    margin: 0 2% 2% 2%; 
+    text-align: center;
+    font-size: 2vw;
+    border-radius: 50%;
+    background-color: #DA8625;
   }
   #bubbles{
-    width: 100%;
-    height: 5%;
-    display: flex;
-    flex-basis: 20%;
-    box-sizing: border-box;
-    border:1px solid black;
-    align-items: center;
-    justify-content: space-evenly;
-    
+  display: flex;
+  width: 20vw;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 12%;
+   background-color: #84a5cf3a;
+
+  padding: 10px 0;
+  
   }
 
   /* RIGHT */
@@ -200,7 +261,7 @@ img{
   #A26A2A 20px */
 
   }
-  /* form */p{ 
+  /* form */h3, p{ 
     font-size: 2vw;
     -webkit-text-fill-color: #DA8625;
     -webkit-text-stroke-color: black;

@@ -55,6 +55,11 @@ h1{
 }
 p,h2{
   font-family: 'Bubblegum Sans', cursive;
+  font-size: 3vw;
+    -webkit-text-fill-color: #DA8625;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 2px;
+  
 }
 
 header {
@@ -98,13 +103,10 @@ form{
   padding:1%;
   border-radius: 10%;
   border:2px solid black;
-  background: repeating-linear-gradient(
-  45deg,
-  #DA8625,
-  #DA8625 10px,
-  #A26A2A 10px,
-  #A26A2A 20px
-);
+  border:2px solid black;
+  background-color: #84a5cf3a;
+  height: 100vh;
+
 }
 .monster-sidebar:hover{
   background: repeating-linear-gradient(
@@ -170,7 +172,11 @@ h2{
   font-size: xx-large;
 }
 form p{
-  font-size: x-large;
+  font-size: 2vw;
+    -webkit-text-fill-color: #DA8625;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 2px;
+    font-family: 'Bubblegum Sans', cursive;
   text-decoration: underline;
 }
 select{
