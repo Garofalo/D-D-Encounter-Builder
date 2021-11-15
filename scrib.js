@@ -502,7 +502,7 @@ function calculateResults(total) {
 
 
 
-  console.log(multipliedTotal)
+
 }
 
 function displayResults(res) {
