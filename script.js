@@ -33,12 +33,10 @@ async function fetchData() {
 }
 
 fetchData();
-// Get unique types from fetchdata and use it to add the types to the selector
+
 
 function getTypeList(typeList) {
 
-  // let distictTypes = [...new Set(typeList)].map(toLower).sort();
-  // let capitalTypes = [...new Set(distictTypes)]
   let distictTypes = [...new Set(typeList)].sort();
   console.log(distictTypes)
   distictTypes.forEach((type) => {
@@ -58,7 +56,6 @@ async function getCR(event) {
   let monsterCR = []
   while (i) {
     const url = `https://api.open5e.com/monsters/?format=json&page=${i}&type=${type}`;
-    // const url = `https://api.open5e.com/monsters/?format=json&page=1`;
     try {
       const res = await axios.get(url)
       monsters = [...monsters, ...res.data.results];

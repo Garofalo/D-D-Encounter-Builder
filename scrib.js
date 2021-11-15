@@ -107,6 +107,8 @@ function removeSelected(arr) {
     button.classList.remove('selected-party-size')
   })
 }
+
+// Source - https://www.javascripttutorial.net/javascript-dom/javascript-siblings/
 let getSiblings = function (e) {
   let siblings = [];
   if (!e.parentNode) {
