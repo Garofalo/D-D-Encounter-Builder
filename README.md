@@ -65,15 +65,15 @@ After Search
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Nov 5-7| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|Nov 8| Project Approval/HTML | Incomplete
-|Nov 9|Core JS Structure | Incomplete
-|Nov 10| Flexbox | Incomplete
-|Nov 11| Psuedocode/Code JS  | Incomplete
-|Nov 12| MVP | Incomplete
-|Nov 13| HTML/CSS for Second Page | Incomplete
-|Nov 14| JS for Second Page | Incomplete
-|Nov 15| Presentations | Incomplete
+|Nov 5-7| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
+|Nov 8| Project Approval/HTML | Complete
+|Nov 9|Core JS Structure | Complete
+|Nov 10| Flexbox | Complete
+|Nov 11| Psuedocode/Code JS  | Complete
+|Nov 12| MVP | Complete
+|Nov 13| HTML/CSS for Second Page | Complete
+|Nov 14| JS for Second Page | Complete
+|Nov 15| Presentations | Complete
 
 ## Priority Matrix
 
@@ -82,11 +82,11 @@ After Search
 ## Timeframes
 
 **MVP Timeframe**<br>
-![image](https://user-images.githubusercontent.com/9029262/140752275-32bddabc-8183-4b09-8772-37a5510c5a06.png)
+![image](https://user-images.githubusercontent.com/9029262/141844200-55bd2aaf-4785-45ce-ba24-1363ef7d4078.png)
 <br>
 
 **Total Timeframe**<br>
-![image](https://user-images.githubusercontent.com/9029262/140752453-ede1ee42-3415-461b-91cd-bdceee99b072.png)
+![image](https://user-images.githubusercontent.com/9029262/141844232-e0d4967b-05f2-4f5d-9bbc-773972f742cf.png)
 <br>
 
 
