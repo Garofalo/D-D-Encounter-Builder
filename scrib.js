@@ -494,7 +494,7 @@ function calculateResults(total) {
     displayResults('medium')
   } else if (multipliedTotal <= hard) {
     displayResults('hard')
-  } else if (multipliedTotal >= deadly) {
+  } else if (multipliedTotal > hard) {
     displayResults('deadly')
   } else {
     displayResults('error')
